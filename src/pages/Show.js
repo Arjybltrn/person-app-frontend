@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Show = (props) => {
+  console.log(id)
   const { id } = useParams();
   const navigate = useNavigate();
   const people = props.people;
+  console.log(people)
   const person = people.find((p) => p._id === id);
 
   const [editForm, setEditForm] = useState(person);
@@ -55,7 +57,7 @@ const Show = (props) => {
 
   return (
     <div className="person">
-      {isLoading ? loading() : loaded()} {/* Display loading or loaded content based on isLoading */}
+      {loaded()}
 
       {isEditing && (
         <form onSubmit={handleSubmit}>
