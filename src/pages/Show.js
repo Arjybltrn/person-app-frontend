@@ -10,10 +10,13 @@ const Show = (props) => {
   const [ editForm, setEditForm ] = useState(person)
 
   const [ isEditing, setisEditing ] = useState(false) 
+
+  const [isLoading, setIsLoading] = useState(true); // Add isLoading state
   
   useEffect(() => {
     if (person) {
       setEditForm(person)
+      setIsLoading(false);
     } 
   }, [person])
 
@@ -57,7 +60,7 @@ const Show = (props) => {
 
   return (
     <div className="person">
-      { person ? loaded() : loading() }
+      { isLoading ? loading() : loaded() }
 
       { isEditing && 
       <form onSubmit={handleSubmit}>
