@@ -7,7 +7,7 @@ const Main = (props) => {
     
     const [ people, setPeople ] = useState(null)
     // const url = "http://localhost:4000/people/"
-    const url = "https://person-app-backend-n1kg.onrender.com/people"
+    const url = "https://person-app-backend-n1kg.onrender.com/people/"
 
     const getPeople = async () => {
         const response = await fetch(url)
