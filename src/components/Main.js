@@ -40,7 +40,7 @@ const Main = (props) => {
         getPeople()
     }
 
-    const deletePeople = async id => {
+    const deletePeople = async (id) => {
         await fetch(url + id, {
             method: "DELETE",
         })
